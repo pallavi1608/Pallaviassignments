@@ -1,0 +1,41 @@
+1. Design and draw UMLclass diagram to represent an airline reservation system. The system enables the customer to search for airline flight on a specified date and choose a flight based on some details like availability. The customer can reserve a flight or cancel his reservation: The system displays all the flight details such as flight number, name, price and duration of journey.
+
+2. Design and draw UML class diagram with attributes, behaviour, and class relationships for the following scenario.
+
+   In a university there are various departments. A department has a name and is associated to classroo and offices. An employee working at the university has a unique id and can be a professor or an instructor. A professor can be a full professor, associate professor, or assistant professor and he/she belongs to a department in the university. Offices and classrooms also have unique IDs and classrooms have fixed number of seats. Also, every employee is assigned an office.
+
+3. Draw an activity diagram for the given scenario where a student needs to enrol with the university for the given course.
+
+   Process for student enrolment in the university is as follows:
+
+   An app cant wants to enrol in the university.
+
+   The applicant hands a filled-out copy of Enrolment Form.
+
+   The registrar inspects the forms.
+
+   The registrar determines that the forms have been filled out properly.
+
+   The registrar informs student to attend in university overview presentation.
+
+   The registrar helps the student to enrol in seminars
+
+   The registrar asks the student to pay for the initial tuition.
+
+4. A scenario of Online Library Management System is given below. You need to refer the use case diagram and moving further need to create a sequence diagram for the same.
+
+  Online Library Management System
+
+  Here are the steps that occur in the given use case named 'Create New Library User Account'.
+
+  The librarian requests the system to create a new online library account
+
+  The librarian then selects the library user account type
+
+  The librarian enters the user's details
+
+  The user's details are checked using the user Credentials Database
+
+  The new library user account is created
+
+  A summary of the new account's details is then emailed to the user.
