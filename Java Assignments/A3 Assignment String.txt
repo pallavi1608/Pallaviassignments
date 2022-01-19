@@ -1,0 +1,209 @@
+String Assignment
+
+#######################################################################################
+Answer
+
+1.	publicclassLengthofstring {
+
+	publicstaticvoid main(String[] args) {
+		
+		String str1 = "Hello World";
+		intlen = str1.length();
+		
+		System.out.println("The length of the given string is: "+len);
+
+		}
+}
+
+2.Answer	publicclassJoinStrings {
+
+	publicstaticvoid main(String[] args) {
+		
+		StringBufferbuffer = newStringBuffer("Hello,");
+		buffer.append(" How are you?");
+		
+		System.out.println("After joining the two strings: "+buffer);
+
+		}
+
+}
+
+3.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args) {
+String str1 = "Java String pool refers to collection of Strings which are stored in heap memory";
+		
+		str1.toLowerCase();
+		String str5 = str1.toLowerCase();
+		System.out.println("New: "+str5);
+		}
+
+}
+
+4.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args) {
+String str1 = "Java String pool refers to collection of Strings which are stored in heap memory";
+		
+		str1.toUpperCase();
+		String str5 = str1.toUpperCase();
+		System.out.println("New: "+str5);
+
+
+		}
+
+}
+
+
+5.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args) {
+String str1 = "Java String pool refers to collection of Strings which are stored in heap memory";
+			
+		String s3 = str1.replace('a', '$' ); //This is case sensitive
+		System.out.println("Replaced Version: "+s3);
+
+		}
+
+}
+
+6.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args) {
+String str1 = "Java String pool refers to collection of Strings which are stored in heap memory";
+			
+		if (str1.contains("collection")) 
+		{
+			System.out.println("Yes");
+		}
+		else
+			{
+				System.out.println("No");
+			}
+		
+		}
+
+}
+7.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args) {
+String str1 = "Java String pool refers to collection of Strings which are stored in heap memory";
+String str2 = "java string pool refers to collection of strings which are stored in heap memory";
+		
+		if(str1 == str2)
+		{
+			System.out.println("It Matches!");
+		}
+		else
+		{
+			System.out.println("Does not Match!");
+		}
+		
+		}
+
+}
+8.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args) {
+String str1 = new String("Java String pool refers to collection of Strings which are stored in heap memory");
+String str2 = new String("java string pool refers to collection of strings which are stored in heap memory");
+		
+		if (str1.equals(str2))
+		{
+			System.out.println("Both Matches!");
+		}
+		else
+			{
+				System.out.println("Does not Match!");
+			}
+		
+		}
+
+}
+
+9.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args)
+	{
+		StringBufferbuffer = newStringBuffer("StringBuffer");
+		buffer.append(" is a peer class of String");
+		buffer.append(" that provides much of");
+		buffer.append(" the functionality of strings");
+		
+		System.out.println("Appended String: "+buffer);
+		}
+
+}
+
+10.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args)
+	{
+StringBuffernewString = newStringBuffer("It is used to at the specified index position");
+
+		newString.insert(13, " insert text");
+		
+		System.out.println("New String: "+newString);
+		}
+
+}
+
+11.	publicclassStringPoolHeap
+{
+
+	publicstaticvoid main(String[] args)
+	{
+StringBufferstr = newStringBuffer("This method returns the reversed object on which it was called");
+		System.out.println("The Given String is: "+str);
+		
+		str.reverse();
+		
+		System.out.println("The String after the reverse: "+str);
+		
+	}
+
+}
+
+12.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args)
+	{
+		StringBuilder builder = new StringBuilder("StringBuilder");
+		builder.append(" is a peer class of String");
+		builder.append(" that provides much of");
+		builder.append(" the functionality of strings");
+		
+		System.out.println("Appended String: "+builder);
+	}
+
+}
+
+
+13.	publicclassStringPoolHeap {
+
+	publicstaticvoid main(String[] args)
+	{
+StringBuildernewString = newStringBuilder("It is used to at the specified index position");
+
+		newString.insert(13, " insert text");
+		
+		System.out.println("New String: "+newString);
+	}
+
+}
+
+14.	publicclassStringPoolHeap
+{
+
+	publicstaticvoid main(String[] args)
+	{
+StringBuilderstr = newStringBuilder("This method returns the reversed object on which it was called");
+		System.out.println("The Given String is: "+str);
+		
+		str.reverse();
+		
+		System.out.println("The String after the reverse: "+str);
+		
+	}
+
+}
