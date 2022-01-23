@@ -1,0 +1,280 @@
+                                                       Lambda Expressions | Assignment 8
+
+######################################################################################################333
+
+
+1.Write an application to perform basic arithmetic operations like add, subtract, multiply & divide. You need to define a functional interface first.
+
+import java.util.Scanner;
+
+@FunctionalInterface
+interface Operator<T> {
+  T process(T a, T b);
+}
+
+public class LambdaOperations {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Operator<Integer> addOperation = (a, b) ->  a + b;
+		System.out.println("addOperation : "+addOperation.process(15, 5));    
+
+		Operator<Integer> subtractOperation = (a, b) ->  a - b;
+		System.out.println("subtractOperation : "+subtractOperation.process(15, 5));    
+
+		Operator<Integer> multiplyOperation = (a, b) ->  a * b;
+		System.out.println("multiplyOperation : "+multiplyOperation.process(15, 5));   
+		
+		Operator<Integer> divideOperation = (a, b) ->  a / b;
+		System.out.println("divideOperation : "+divideOperation.process(15, 5));   
+
+	}
+
+}
+Output
+addOperation : 20
+subtractOperation : 10
+multiplyOperation : 75
+divideOperation : 3
+
+
+
+2.Write an application using lambda expressions to print Orders having 2 criteria implemented
+Order price more than 10000
+Order status is ACCEPTED or COMPLETED
+
+
+
+import java.util.Scanner;
+
+public class Expn {
+	public static void main(String[] args)
+	{
+		
+		order mylambda = (int a) -> {
+			if(a >10000) 
+				{
+				System.out.println("Accepted"); 
+				}
+				else
+				{
+					System.out.println("Not Accepted");
+				}
+			return a;
+		};
+		System.out.println("order amount:" +(mylambda.foo(200000)));
+	}
+     interface order
+     {
+    	 int foo(int a);
+     }
+}
+
+
+output
+Accepted
+order amount:200000
+
+
+
+
+
+3.Use the functional interfaces Supplier, consumer, Predicate and Function to invoke built-in Methods from java API.
+
+import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+public class Expi {
+public static void main(String[] args)
+{
+	//predicate
+	Predicate<Integer>gt=a->(a>10);
+	System.out.println("predicate:" + gt.test(50));
+	//supplier
+	String str="PALLAVI";
+	Supplier<Integer> supplier=()->str.length();
+	System.out.println("Supplier:" +supplier.get());
+	//Consumer
+	Consumer<String>print=a->System.out.println("Consumer:"+a);
+	print.accept("PALLAVI");
+}	
+}	
+
+
+OUTPUT
+predicate:true
+Supplier:7
+Consumer:PALLAVI
+
+
+
+
+
+4.Remove the words that have odd lengths from the list. HINT : Use one of the new methods from JDK 8. Use remove() method from Collection interface
+
+
+import java.util.ArrayList;
+public class Exph {
+	public static void main(String[] args)
+	{
+		ArrayList<String>words=new ArrayList<String>();
+		words.add("Hello");
+		words.add("Friend");
+		words.add("what");
+		words.add("Are");
+		words.add("You");
+		words.add("Doing");
+		words.removeIf(n->(n.length()%2=0));
+		for(String i:words)
+		{
+			System.out.println(i);
+		}
+	}
+
+}
+
+
+output
+Hello
+Are
+You
+Doing
+
+
+
+5.Create a string that consists of the first letter of each word in the list of Strings provide. HINT : Use Consumer interface and a StringBulider to construct the results.
+
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class AppendResult {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StringBuilder str=new StringBuilder();  
+		List<String> names =Arrays.asList(
+				new String("What"),new String("Order"),new String("Not"),new String("Dell"),new String("Either"),new String("Rather"),
+				new String("Full"),new String("Until"),new String("Like")
+				);
+		
+		for(String n : names) {
+			str.append(n.charAt(0));
+		}
+		
+		//prints the first letters of all the string in the list
+		printstring(str,c->System.out.println(str));
+	}
+
+	private static void printstring(StringBuilder str,Consumer consumer) {
+		// TODO Auto-generated method stub
+		if(str!=null) {
+		consumer.accept(str);
+		}
+	}
+
+}
+Output
+WONDERFUL
+
+
+
+6.Replace every word in the list with its upper case equivalent. Use replaceAll() method and UnaryOperator interface.
+
+
+
+import java.util.ArrayList;
+import java.util.function.UnaryOperator;
+class Replace implements UnaryOperator<String> {
+   public String apply(String str) {
+      return str.toUpperCase();
+   }
+}
+public class Test {
+   public static void main(String[] args) throws CloneNotSupportedException {
+      ArrayList<String> list = new ArrayList<>();
+      list.add("practice");
+      list.add("makes");
+      list.add("man");
+      list.add("perfect");
+      list.add("right");
+      System.out.println("Contents of the list: "+list);
+      list.replaceAll(new Op());
+      System.out.println("Contents of the list after replace operation: \n"+list);
+   }
+}
+
+
+
+out put
+Contents of the list: [practice, makes, man, perfect, right]
+Contents of the list after replace operation: 
+[PRACTICE, MAKES, MAN, PERFECT, RIGHT]
+
+
+
+
+
+7.Convert every key-value pair of the map into a string and append them all into a single string, in iteration order. HINT: Use Map.entrySet() method & a StringBuilder to construct the result String.
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Convert {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StringBuilder str=new StringBuilder();  
+		Map<Integer,String> map = new TreeMap<>();
+		map.put(1, "Hii");
+		map.put(2, "Is");
+		map.put(3, "Everything");
+		map.put(4, "Is");
+		map.put(5, "Ok");
+		map.put(6, "What");
+		map.put(7, "Going");
+		map.put(8, "On");
+		
+		for(Map.Entry<Integer,String>entry:map.entrySet()) {
+					
+			Integer key = entry.getKey();
+			String c = entry.getValue();
+			str.append(key + c);
+		}
+		//print result string
+		System.out.println(str);
+	}
+
+}
+Output
+1Hii2Is3Everything4Is5Ok6What7Going8On
+
+
+
+
+8.Create a new thread that prints the numbers from the list. Use class Thread & interface Consumer.
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Threadlist {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Integer> num=new ArrayList<Integer>(){{
+            add(1);
+            add(11);
+            add(31);
+            add(51);
+            add(21);
+        }};
+        
+        Thread mylambda = new Thread(()->System.out.println(num));
+        mylambda.run();
+	}
+}
+Output
+[1, 11, 31, 51, 21]
